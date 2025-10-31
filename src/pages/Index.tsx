@@ -1,12 +1,49 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { UserPreferences } from "@/types/program";
+import { programs } from "@/data/programs";
+import WelcomeScreen from "@/components/WelcomeScreen";
+import QuestionScreen from "@/components/QuestionScreen";
+import ResultScreen from "@/components/ResultScreen";
+
+type Screen = "welcome" | "questions" | "results";
 
 const Index = () => {
+  const [currentScreen, setCurrentScreen] = useState<Screen>("welcome");
+  const [preferences, setPreferences] = useState<UserPreferences>({
+    stage: null,
+    supportType: null,
+    field: null,
+  });
+
+  const handleStart = () => {
+    setCurrentScreen("questions");
+  };
+
+  const handleComplete = (userPreferences: UserPreferences) => {
+    setPreferences(userPreferences);
+    setCurrentScreen("results");
+  };
+
+  const handleReset = () => {
+    setPreferences({
+      stage: null,
+      supportType: null,
+      field: null,
+    });
+    setCurrentScreen("welcome");
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      {currentScreen === "welcome" && <WelcomeScreen onStart={handleStart} />}
+      {currentScreen === "questions" && <QuestionScreen onComplete={handleComplete} />}
+      {currentScreen === "results" && (
+        <ResultScreen
+          programs={programs}
+          preferences={preferences}
+          onReset={handleReset}
+        />
+      )}
     </div>
   );
 };
