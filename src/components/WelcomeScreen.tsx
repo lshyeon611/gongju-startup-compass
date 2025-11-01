@@ -47,54 +47,54 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-accent/30 via-background to-background">
-        <div className="container mx-auto px-4 py-20 md:py-32">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-in fade-in duration-700">
-            <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg mb-6">
-              <Rocket className="w-12 h-12 text-primary-foreground" />
+        <div className="container mx-auto px-4 py-24 md:py-40">
+          <div className="max-w-4xl mx-auto text-center space-y-10 animate-in fade-in duration-700">
+            <div className="inline-flex items-center justify-center w-28 h-28 rounded-full bg-gradient-to-br from-primary to-secondary shadow-2xl mb-4 animate-pulse">
+              <Rocket className="w-14 h-14 text-primary-foreground" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight">
               GongjuMatch
             </h1>
-            <p className="text-2xl md:text-3xl text-foreground font-semibold">
-              공주 지역 창업자를 위한 맞춤 지원 추천 앱
+            <p className="text-2xl md:text-4xl text-foreground font-semibold leading-relaxed">
+              공주 지역 창업자를 위한<br className="md:hidden" /> 맞춤 지원 추천 앱
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              당신에게 가장 적합한 창업 지원 프로그램을 바로 확인하세요!
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              당신에게 가장 적합한 창업 지원 프로그램을<br className="md:hidden" /> 바로 확인하세요!
             </p>
             <Button 
               onClick={onStart}
               size="lg"
-              className="text-lg px-12 py-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 mt-4"
+              className="text-xl px-16 py-8 shadow-2xl hover:shadow-[0_20px_60px_-15px] hover:shadow-primary/50 transition-all duration-300 hover:scale-110 mt-8 font-bold"
             >
               나에게 맞는 지원 찾기
             </Button>
           </div>
         </div>
-        <div className="absolute top-0 right-0 -z-10 w-1/2 h-1/2 bg-gradient-to-bl from-primary/10 to-transparent blur-3xl" />
-        <div className="absolute bottom-0 left-0 -z-10 w-1/2 h-1/2 bg-gradient-to-tr from-secondary/10 to-transparent blur-3xl" />
+        <div className="absolute top-0 right-0 -z-10 w-1/2 h-1/2 bg-gradient-to-bl from-primary/20 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-0 -z-10 w-1/2 h-1/2 bg-gradient-to-tr from-secondary/20 to-transparent blur-3xl" />
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-background">
+      <section className="py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 leading-tight">
               GongjuMatch 주요 기능
             </h2>
-            <p className="text-muted-foreground text-center mb-12 text-lg">
+            <p className="text-muted-foreground text-center mb-16 text-xl leading-relaxed">
               AI 기반 맞춤 추천으로 시간을 절약하세요
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-10">
               {features.map((feature, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                      <feature.icon className="w-8 h-8 text-primary" />
+                <Card key={index} className="text-center hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 border-2 hover:border-primary/50 bg-gradient-to-br from-card to-accent/5">
+                  <CardHeader className="pb-4">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="w-10 h-10 text-primary-foreground" />
                     </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                    <CardTitle className="text-2xl font-bold leading-tight">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-loose text-base">
                       {feature.description}
                     </p>
                   </CardContent>
@@ -106,39 +106,39 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
       </section>
 
       {/* Demo Section */}
-      <section className="py-20 bg-accent/20">
+      <section className="py-28 bg-gradient-to-br from-accent/10 via-accent/20 to-accent/10">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 leading-tight">
               프로그램 예시
             </h2>
-            <p className="text-muted-foreground text-center mb-12 text-lg">
+            <p className="text-muted-foreground text-center mb-16 text-xl leading-relaxed">
               이런 지원 프로그램들을 추천받을 수 있습니다
             </p>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               {demoPrograms.map((program, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <CardHeader>
-                    <div className="flex items-start justify-between gap-2 mb-2">
-                      <Badge variant="secondary" className="text-xs">
+                <Card key={index} className="hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 border-2 hover:border-primary/50">
+                  <CardHeader className="space-y-3">
+                    <div className="flex items-start justify-between gap-2">
+                      <Badge variant="secondary" className="text-sm px-3 py-1 font-semibold">
                         {program.type}
                       </Badge>
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="text-sm px-3 py-1 font-semibold">
                         {program.target}
                       </Badge>
                     </div>
-                    <CardTitle className="text-xl">{program.name}</CardTitle>
-                    <CardDescription className="text-sm">
+                    <CardTitle className="text-2xl leading-tight">{program.name}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
                       {program.organization}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-foreground/80 leading-relaxed">
+                    <p className="text-foreground/80 leading-loose text-base">
                       {program.description}
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="outline" className="w-full" disabled>
+                    <Button variant="outline" className="w-full text-base py-6 hover:bg-primary hover:text-primary-foreground transition-colors duration-300" disabled>
                       신청 바로가기
                     </Button>
                   </CardFooter>
@@ -150,37 +150,37 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
       </section>
 
       {/* CTA & Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+      <section className="py-28 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold">
+          <div className="max-w-4xl mx-auto text-center space-y-10">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               지금 바로 시작하세요
             </h2>
-            <p className="text-lg text-muted-foreground">
-              세 가지 간단한 질문으로 당신에게 딱 맞는 창업 지원 프로그램을 찾아드립니다
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              세 가지 간단한 질문으로 당신에게 딱 맞는<br className="md:hidden" /> 창업 지원 프로그램을 찾아드립니다
             </p>
             <Button 
               onClick={onStart}
               size="lg"
-              className="text-lg px-12 py-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="text-xl px-16 py-8 shadow-2xl hover:shadow-[0_20px_60px_-15px] hover:shadow-primary/50 transition-all duration-300 hover:scale-110 font-bold"
             >
               나에게 맞는 지원 찾기
             </Button>
             
-            <div className="pt-12 mt-12 border-t border-border">
-              <h3 className="text-xl font-semibold mb-6">문의하기</h3>
-              <div className="space-y-4 text-muted-foreground">
-                <div className="flex items-center justify-center gap-2">
-                  <MapPin className="w-5 h-5" />
-                  <span>공주시 창업지원센터</span>
+            <div className="pt-16 mt-16 border-t-2 border-border">
+              <h3 className="text-2xl font-bold mb-8 leading-tight">문의하기</h3>
+              <div className="space-y-5 text-muted-foreground">
+                <div className="flex items-center justify-center gap-3 text-lg">
+                  <MapPin className="w-6 h-6 text-primary" />
+                  <span className="leading-relaxed">공주시 창업지원센터</span>
                 </div>
-                <div className="flex items-center justify-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  <span>041-XXX-XXXX</span>
+                <div className="flex items-center justify-center gap-3 text-lg">
+                  <Phone className="w-6 h-6 text-primary" />
+                  <span className="leading-relaxed">041-XXX-XXXX</span>
                 </div>
-                <div className="flex items-center justify-center gap-2">
-                  <Mail className="w-5 h-5" />
-                  <span>startup@gongju.go.kr</span>
+                <div className="flex items-center justify-center gap-3 text-lg">
+                  <Mail className="w-6 h-6 text-primary" />
+                  <span className="leading-relaxed">startup@gongju.go.kr</span>
                 </div>
               </div>
             </div>
