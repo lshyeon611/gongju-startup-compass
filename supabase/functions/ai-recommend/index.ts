@@ -40,7 +40,7 @@ serve(async (req) => {
   "field": "IT|관광|식품|문화|기타",
   "description": "한 문장 요약",
   "organization": "주관 기관",
-  "link": "https://www.gongju.go.kr/",
+  "link": "https://www.kongju.go.kr/",
   "details": "상세 설명"
 }`;
 
@@ -126,7 +126,7 @@ function getFallbackPrograms(stage: string, supportType: string, field: string) 
       field: field,
       description: `${field} 분야 ${stage}를 위한 ${supportType} 지원 프로그램입니다.`,
       organization: "공주시청 창업지원과",
-      link: "https://www.gongju.go.kr/",
+      link: "https://www.kongju.go.kr/",
       details: `이 프로그램은 공주시에서 운영하는 ${field} 분야의 ${stage}를 대상으로 한 ${supportType} 지원 사업입니다. 자세한 내용은 공주시청 홈페이지를 참고해주세요.`
     },
     {
@@ -137,7 +137,7 @@ function getFallbackPrograms(stage: string, supportType: string, field: string) 
       field: field,
       description: "충남 지역 창업자를 위한 멘토링 및 컨설팅 지원",
       organization: "충청남도 창업지원센터",
-      link: "https://www.gongju.go.kr/",
+      link: "https://www.kongju.go.kr/",
       details: "창업 전반에 대한 전문가 멘토링과 사업화 컨설팅을 제공합니다."
     }
   ];

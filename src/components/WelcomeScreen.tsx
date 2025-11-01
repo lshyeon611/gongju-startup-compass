@@ -53,7 +53,7 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
               <Rocket className="w-14 h-14 text-primary-foreground" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent leading-tight">
-              GongjuMatch
+              KongjuMatch
             </h1>
             <p className="text-2xl md:text-4xl text-foreground font-semibold leading-relaxed">
               공주 지역 창업자를 위한<br className="md:hidden" /> 맞춤 지원 추천 앱
@@ -79,7 +79,7 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 leading-tight">
-              GongjuMatch 주요 기능
+              KongjuMatch 주요 기능
             </h2>
             <p className="text-muted-foreground text-center mb-16 text-xl leading-relaxed">
               AI 기반 맞춤 추천으로 시간을 절약하세요
@@ -180,7 +180,7 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
                 </div>
                 <div className="flex items-center justify-center gap-3 text-lg">
                   <Mail className="w-6 h-6 text-primary" />
-                  <span className="leading-relaxed">startup@gongju.go.kr</span>
+                  <span className="leading-relaxed">startup@kongju.go.kr</span>
                 </div>
               </div>
             </div>
