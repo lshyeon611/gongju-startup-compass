@@ -8,7 +8,7 @@ import ResultScreen from "@/components/ResultScreen";
 type Screen = "welcome" | "questions" | "results";
 
 const Index = () => {
-  const { programs, isLoading } = usePrograms();
+  const { programs, isLoading, fetchPrograms } = usePrograms();
   const [currentScreen, setCurrentScreen] = useState<Screen>("welcome");
   const [preferences, setPreferences] = useState<UserPreferences>({
     stage: null,
@@ -20,9 +20,10 @@ const Index = () => {
     setCurrentScreen("questions");
   };
 
-  const handleComplete = (userPreferences: UserPreferences) => {
+  const handleComplete = async (userPreferences: UserPreferences) => {
     setPreferences(userPreferences);
     setCurrentScreen("results");
+    await fetchPrograms(userPreferences);
   };
 
   const handleReset = () => {

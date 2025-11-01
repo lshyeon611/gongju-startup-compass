@@ -1,18 +1,19 @@
-import { Program } from "@/types/program";
+import { Program, UserPreferences } from "@/types/program";
+import { supabase } from "@/integrations/supabase/client";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+export const fetchAIRecommendations = async (preferences: UserPreferences): Promise<Program[]> => {
+  const { data, error } = await supabase.functions.invoke('ai-recommend', {
+    body: {
+      stage: preferences.stage,
+      supportType: preferences.supportType,
+      field: preferences.field,
+    }
+  });
 
-export const fetchPrograms = async (): Promise<Program[]> => {
-  if (!API_BASE_URL) {
-    throw new Error("API URL not configured");
+  if (error) {
+    console.error('AI 추천 오류:', error);
+    throw error;
   }
 
-  const response = await fetch(`${API_BASE_URL}/programs`);
-  
-  if (!response.ok) {
-    throw new Error(`API request failed: ${response.status}`);
-  }
-
-  const data = await response.json();
-  return data;
+  return data as Program[];
 };

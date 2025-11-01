@@ -1,36 +1,41 @@
-import { useState, useEffect } from "react";
-import { Program } from "@/types/program";
+import { useState } from "react";
+import { Program, UserPreferences } from "@/types/program";
 import { programs as fallbackPrograms } from "@/data/programs";
-import { fetchPrograms } from "@/lib/api";
+import { fetchAIRecommendations } from "@/lib/api";
 import { toast } from "@/hooks/use-toast";
 
 export const usePrograms = () => {
   const [programs, setPrograms] = useState<Program[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const loadPrograms = async () => {
-      setIsLoading(true);
+  const fetchPrograms = async (preferences: UserPreferences) => {
+    setIsLoading(true);
+    
+    try {
+      const data = await fetchAIRecommendations(preferences);
+      setPrograms(data);
+    } catch (error) {
+      console.error("AI 추천 실패:", error);
       
-      try {
-        const data = await fetchPrograms();
-        setPrograms(data);
-      } catch (error) {
-        console.log("API 호출 실패, fallback 데이터 사용:", error);
-        setPrograms(fallbackPrograms);
-        
-        toast({
-          title: "로컬 데이터 사용 중",
-          description: "API 연결이 불가능하여 예시 데이터를 표시합니다.",
-          variant: "default",
-        });
-      } finally {
-        setIsLoading(false);
-      }
-    };
+      // Fallback: 로컬 데이터 필터링
+      const filtered = fallbackPrograms.filter(
+        (program) =>
+          program.target === preferences.stage &&
+          program.type === preferences.supportType &&
+          program.field === preferences.field
+      );
+      
+      setPrograms(filtered);
+      
+      toast({
+        title: "로컬 데이터 사용 중",
+        description: "AI 추천이 불가능하여 예시 데이터를 표시합니다.",
+        variant: "default",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    loadPrograms();
-  }, []);
-
-  return { programs, isLoading };
+  return { programs, isLoading, fetchPrograms };
 };
