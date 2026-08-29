@@ -1,73 +1,176 @@
-# Welcome to your Lovable project
+# GongjuMatch
 
-## Project info
+### 공주 지역 창업자를 위한 맞춤형 창업 지원 추천 서비스
 
-**URL**: https://lovable.dev/projects/e448c3da-ed0a-4696-bab3-6c47c5969862
+> 공주 지역의 창업 희망자가 복잡하고 흩어진 창업 지원 정보를 쉽게 찾고,  
+> 자신의 상황에 맞는 지원 프로그램을 추천받을 수 있도록 돕는 AI 기반 웹 서비스입니다.
 
-## How can I edit this code?
+🔗 **Service:** https://gongju-startup-compass.lovable.app
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 📌 프로젝트 소개
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e448c3da-ed0a-4696-bab3-6c47c5969862) and start prompting.
+GongjuMatch는 **공주 지역의 창업 활성화를 통해 지역 소멸 문제에 대응하는 것**을 목표로 제작한 AI 기반 창업 지원 정보 추천 서비스입니다.
 
-Changes made via Lovable will be committed automatically to this repo.
+공주시를 비롯한 여러 기관에서 제공하는 창업 지원 정보가 여러 곳에 흩어져 있어, 창업을 준비하는 사람이 자신에게 필요한 정보를 직접 찾아야 한다는 문제에서 출발했습니다.
 
-**Use your preferred IDE**
+처음에는 전국 단위의 창업 지원 정보 서비스를 구상했지만, 지역 소멸이라는 문제를 해결하기 위해서는 **문제의 범위 역시 지역 단위로 좁혀야 한다고 판단했습니다.**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+이에 서비스의 타깃을 **공주 지역의 창업 희망자 및 소상공인**으로 구체화하고, 공주 지역의 창업 지원 정보를 중심으로 맞춤형 추천 서비스를 구현했습니다.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🎯 프로젝트 목표
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- 공주 지역 창업 지원 정보에 대한 접근성 향상
+- 창업자의 상황에 맞는 지원 프로그램 탐색 부담 감소
+- AI를 활용한 맞춤형 창업 지원 정보 추천
+- 지역 내 창업 활성화를 통한 지역 경제 활성화
+- 향후 지역 창업 생태계의 연결 플랫폼으로 확장
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 💡 주요 기능
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### 1. 창업 단계 및 관심 분야 선택
 
-**Edit a file directly in GitHub**
+사용자가 자신의 현재 창업 단계와 필요한 지원 분야를 선택합니다.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- 아이디어 구상
+- 사업화 준비
+- 초기 창업
+- 자금 지원
+- 멘토링
+- 교육
+- 공간 지원
 
-**Use GitHub Codespaces**
+### 2. AI 기반 맞춤형 지원사업 추천
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+사용자가 입력한 정보를 기반으로 **GPT-4 기반 AI가 적합한 창업 지원 프로그램을 추천**합니다.
 
-## What technologies are used for this project?
+AI가 사용자의 조건을 분석하여 공주 지역의 창업 지원 정보 중 관련성이 높은 프로그램을 선별하고 카드 형태로 제공합니다.
 
-This project is built with:
+### 3. 지원사업 정보 확인
 
-- Vite
-- TypeScript
+추천 결과를 카드 형태로 제공하여 사용자가 필요한 정보를 한눈에 확인할 수 있도록 구성했습니다.
+
+각 카드에는 다음 정보를 제공합니다.
+
+- 프로그램 이름
+- 주요 내용 및 요약
+- 주관 기관
+- 신청 링크
+
+### 4. 신청 페이지 연결
+
+관심 있는 지원사업의 신청 링크를 통해 해당 기관의 상세 페이지로 바로 이동할 수 있습니다.
+
+---
+
+## 🤖 AI 활용
+
+GongjuMatch의 핵심 기능은 **AI 기반 맞춤형 추천 시스템**입니다.
+
+단순히 사용자의 질문을 GPT에 전달하는 방식이 아니라, 사용자가 입력한 창업 단계와 관심 분야 등의 정보를 구조화하여 AI가 적절한 지원 프로그램을 추천하도록 구성했습니다.
+
+이를 통해 복잡하게 흩어진 창업 지원 정보를 사용자가 직접 검색하는 대신, 자신의 상황에 맞는 정보를 빠르게 확인할 수 있도록 했습니다.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
 - React
-- shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+### Backend
+- Node.js
+- Express
 
-Simply open [Lovable](https://lovable.dev/projects/e448c3da-ed0a-4696-bab3-6c47c5969862) and click on Share -> Publish.
+### AI
+- OpenAI API
+- GPT-4
 
-## Can I connect a custom domain to my Lovable project?
+### Development
+- Lovable
+- GPT
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🔧 개발 과정
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### 1. 문제 정의
+
+공주 지역의 청년 인구 감소와 청년층의 지역 이탈로 인한 지역 소멸 문제에 주목했습니다.
+
+특히 창업 지원 정보가 여러 기관에 산발적으로 존재하여 창업 희망자가 자신에게 필요한 정보를 찾기 어렵다는 문제를 발견했습니다.
+
+### 2. 타깃 구체화
+
+처음에는 전국의 창업자를 대상으로 하는 서비스를 구상했습니다.
+
+하지만 지역 소멸이라는 문제를 해결하기 위해서는 실제 지역 단위의 문제를 해결해야 한다고 판단했고, 최종적으로 **공주 지역 창업 희망자**를 주요 타깃으로 설정했습니다.
+
+### 3. 데이터 수집
+
+공주 지역의 창업 지원 정보를 중심으로 데이터를 수집했습니다.
+
+주요 데이터 출처는 다음과 같습니다.
+
+- 공주시
+- 창업진흥원
+- 중소벤처기업부
+
+공공기관에서 제공하는 공식 지원 정보를 기반으로 서비스를 구성했습니다.
+
+### 4. 서비스 구현
+
+Lovable과 GPT를 활용한 바이브코딩 방식으로 서비스를 구현했습니다.
+
+프론트엔드는 React와 Tailwind CSS를 활용하고, 백엔드는 Node.js와 Express를 기반으로 구성했습니다.
+
+AI 추천 기능을 구현하기 위해 OpenAI API를 백엔드에 연동했습니다.
+
+---
+
+## 🐛 개발 과정에서의 문제 해결
+
+개발 과정에서 AI 추천 기능을 구현하는 과정에서 **백엔드 데이터 연결 및 API 호출 과정에서 오류가 발생하여 추천 결과가 정상적으로 출력되지 않는 문제**가 있었습니다.
+
+처음에는 직접 작성한 코드가 아니었기 때문에 오류의 원인을 파악하는 데 어려움이 있었습니다.
+
+이를 해결하기 위해 GPT와 Lovable의 AI 코딩 어시스턴트를 활용하여 오류가 발생한 부분과 데이터가 전달되는 과정을 단계적으로 확인하고 프롬프트를 수정하며 기능을 테스트했습니다.
+
+또한 실제 API가 원활하게 작동하지 않는 상황에 대비하여 **fallback JSON 데이터를 마련**하여 시연 과정에서 추천 기능이 중단되지 않도록 했습니다.
+
+---
+
+## 🏆 프로젝트 성과
+
+### AI 디지털 기술혁신과 경제구조 아이디어 챌린지 해커톤
+
+**장려상 수상**
+
+제한된 시간 안에 지역 문제를 정의하고 AI를 활용한 실제 서비스 형태의 프로토타입을 구현했습니다.
+
+단순히 창업 정보를 나열하는 서비스가 아니라, AI를 활용해 사용자의 상황에 맞는 정보를 추천함으로써 창업 지원 정보에 대한 접근성을 높이는 것을 목표로 했습니다.
+
+---
+
+## 📱 서비스 이용 과정
+
+```text
+사용자 정보 입력
+       ↓
+창업 단계 및 관심 분야 선택
+       ↓
+AI가 사용자 정보 분석
+       ↓
+공주 지역 창업 지원 정보 탐색
+       ↓
+맞춤형 지원사업 추천
+       ↓
+지원사업 상세 정보 확인
+       ↓
+신청 페이지 이동
